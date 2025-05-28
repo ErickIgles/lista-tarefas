@@ -1,0 +1,35 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+</head>
+<body>
+    <header></header>
+    <main class="container__main">
+        <h1>Lista de Tarefas</h1>
+        <form id="task-form" method="POST">
+            {% csrf_token %}
+            <input type="text" id="title" name="title" placeholder="Título" required>
+            <textarea id="description" name="description" placeholder="Descrição"></textarea>
+            <label for="status">Status:</label>
+            <select id="status" name="status" class="select__main">
+                <option value="P">Pendente</option>
+                <option value="E">Em andamento</option>
+                <option value="C">Concluído</option>
+            </select>
+            <button type="submit" id="submit-button">Cadastrar</button>
+        </form>
+    </main>
+
+    <ul id="task-list" class="task__list"></ul>
+
+
+    <footer>Desenvolvido por Erick Almeida</footer>
+
+    <script src="{% static 'js/main.js'%}"></script>
+</body>
+</html>
