@@ -1,0 +1,256 @@
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    max-height: 100vh;
+    font-size: 10px; 
+    background-color: blueviolet;
+    font-family: 'UNbounded', cursive;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Unbounded', cursive;
+}
+
+.container__main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 2em;
+    margin: 6em;
+    padding: 50px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+input, textarea, .select__main, button {
+    border-radius: 12px;
+    border: none;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+}
+
+input {
+    width: 478px;
+    height: 36px;
+    padding-left: 15px;
+}
+
+textarea {
+    width: 478px;
+    height: 80px;
+    padding-top: 14px;
+    padding-left: 15px;
+}
+
+.select__main {
+    width: 478px;
+    height: 50px;
+    padding-left: 15px;
+}
+
+button {
+    width: 478px;
+    height: 40px;
+    background-color: #4CAF50;
+    color: white;
+    font-size: 16px;
+    font-weight: 500;
+    border-radius: 10px;
+}
+
+button:hover {
+    transform: scale(0.95);
+}
+
+label {
+    font-size: 25px;
+}
+
+.task__list {
+    display: flex;
+    list-style: none;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.task-card {
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 16px;
+    margin-bottom: 12px;
+    background-color: #f9f9f9;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    width: 100%;  /* Garante que ocupe a largura do container */
+    max-width: 600px; /* Limita a largura máxima */
+}
+
+.task-info {
+    flex: 1;
+    min-width: 200px;
+}
+
+.task-info strong {
+    font-size: 2rem;
+    color: #333;
+}
+
+.task-info p {
+    font-size: 2rem;
+    margin: 4px 0 0;
+    color: #666;
+}
+
+.task-actions {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    margin-top: 10px;
+}
+
+.task-actions button {
+    padding: 4px 8px;
+    font-size: 16px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: 500;
+}
+
+.edit-btn {
+    background-color: #4CAF50;
+    color: white;
+}
+
+.delete-btn {
+    background-color: #f44336;
+    color: white;
+}
+
+footer {
+    width: 100%;
+    background-color: #3a1c71;
+    color: #ffffff;
+    text-align: center;
+    padding: 20px 0;
+    font-size: 1.6rem;
+    box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.2);
+    position: relative; /* Para evitar problemas com fixed */
+}
+
+
+
+/* === MEDIA QUERIES PARA RESPONSIVIDADE === */
+
+/* Tablets (entre 768px e 1024px) */
+@media (max-width: 1024px) {
+    .container__main {
+        margin: 3em;
+        padding: 30px;
+    }
+
+    input, textarea, .select__main, button {
+        width: 100%; /* Ocupa toda a largura do container */
+        max-width: 500px;
+    }
+
+    label {
+        font-size: 22px;
+    }
+
+    .task-card {
+        max-width: 100%;
+        padding: 14px;
+    }
+
+    .task-info strong,
+    .task-info p {
+        font-size: 1.8rem;
+    }
+
+    .task-actions button {
+        font-size: 14px;
+        padding: 3px 6px;
+    }
+}
+
+/* Celulares (até 767px) */
+@media (max-width: 767px) {
+    html {
+        font-size: 8px; /* Fonte base menor */
+    }
+
+    .container__main {
+        margin: 2em 1em;
+        padding: 20px;
+    }
+
+    input, textarea, .select__main, button {
+        width: 100%;
+        max-width: 100%;
+        height: auto;
+        font-size: 1.4rem;
+        padding: 10px 15px;
+        border-radius: 10px;
+    }
+
+    textarea {
+        height: 100px;
+    }
+
+    label {
+        font-size: 18px;
+    }
+
+    button {
+        height: 45px;
+        font-size: 14px;
+    }
+
+    .task-card {
+        max-width: 100%;
+        padding: 12px;
+    }
+
+    .task-info strong,
+    .task-info p {
+        font-size: 1.6rem;
+        word-wrap: break-word;
+    }
+
+    .task-actions {
+        flex-direction: row; /* Botões lado a lado em celular */
+        flex-wrap: wrap;
+        gap: 10px;
+        justify-content: center;
+        margin-top: 15px;
+    }
+
+    .task-actions button {
+        font-size: 14px;
+        padding: 6px 12px;
+        flex: 1 1 45%; /* Dois botões por linha */
+        max-width: 150px;
+    }
+
+    footer {
+        font-size: 1.4rem;
+        padding: 15px 10px;
+    }
+}
