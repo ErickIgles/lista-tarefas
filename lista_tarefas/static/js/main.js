@@ -14,7 +14,6 @@ document.addEventListener('DOMContentLoaded', () => {
     };
 
 
-        // Função para obter o CSRF Token
     function getCookie(name) {
         let cookieValue = null;
         if (document.cookie && document.cookie !== '') {
@@ -79,7 +78,6 @@ document.addEventListener('DOMContentLoaded', () => {
     };
 
 
-// Evento de submissão do formulário para adicionar uma nova tarefa
    
     form.addEventListener('submit', e => {
         e.preventDefault();
@@ -88,7 +86,6 @@ document.addEventListener('DOMContentLoaded', () => {
         const status = statusSelect.value
 
         if (editingTaskId) {
-            // Atualiza tarefa existente
             fetch(`/api/v1/tasks/${editingTaskId}/`, {
                 method: 'PUT',
                 headers: { 'Content-Type': 'application/json', 'X-CSRFToken': csrfToken },
@@ -99,8 +96,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 loadTasks();
             });
         } else {
-            // Adiciona nova tarefa
-            // console.log({ title, description, status }),
+
             fetch('/api/v1/tasks/', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json', 'X-CSRFToken': csrfToken},
@@ -113,13 +109,11 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
 
-    // Função para excluir uma tarefa
     window.deleteTask = (id) => {
         fetch(`/api/v1/tasks/${id}/`, { method: 'DELETE' } )
             .then(() => loadTasks());
     };
 
-    // Ativa modo de edição preenchendo o formulário com os dados da tarefa
     window.editTask = (id, title, description) => {
         titleInput.value = title;
         descriptionInput.value = description;
@@ -127,5 +121,5 @@ document.addEventListener('DOMContentLoaded', () => {
     };
 
     loadTasks();
-    setInterval(loadTasks, 5000); // Atualização automática (opcional)
+    setInterval(loadTasks, 5000);
 });
