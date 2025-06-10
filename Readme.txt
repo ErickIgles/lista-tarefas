@@ -7,14 +7,14 @@ O "Lista-tarefas" é um aplicativo full-stack de lista de tarefas que demonstra 
 🔹 Interface intuitiva com atualizações dinâmicas e em tempo real da lista de tarefas.
 
 🛠 Tecnologias Utilizadas
-🐍 Python	Linguagem principal do backend
-🚀 Django REST Framework	Desenvolvimento da API RESTful
-🗄 SQLite3	Armazenamento de dados
-🌐 HTML	Estrutura da interface do usuário
-🎨 CSS	Estilização da interface
-💡 JavaScript	Interatividade dinâmica e consumo da API
-🔒 CSRF token	Segurança para requisições do Django
-🌲 GIT	Controle de versão com commits organizados
+🐍 Python -> 	Linguagem principal do backend
+🚀 Django REST Framework -> 	Desenvolvimento da API RESTful
+🗄 SQLite3 -> Armazenamento de dados
+🌐 HTML	-> Estrutura da interface do usuário
+🎨 CSS	-> Estilização da interface
+💡 JavaScript -> Interatividade dinâmica e consumo da API
+🔒 CSRF token	-> Segurança para requisições do Django
+🌲 GIT -> Controle de versão com commits organizados
 
 
 ## 📥 Instalação
